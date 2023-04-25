@@ -5,7 +5,7 @@ import { transacaoSchema } from "../schemas/transacao.schema.js";
 
 export const criarTransacao = async (req, res) => {
   const descricao = req.body.descricao;
-  const valor = req.body.valor.replaceAll(",", "");
+  const valor = req.body.valor;
   const token = req.headers.authorization?.replace("Bearer ", "");
   const { tipo } = req.params;
   const dia = dayjs().format("DD/MM");
